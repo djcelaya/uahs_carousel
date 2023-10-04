@@ -1,0 +1,15 @@
+/* Desktop Styles */
+@media (min-width: 1200px) {
+	.az-carousel-slide-details {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: auto;
+		width: 40%;
+		height: 100%;
+		background-color: rgba(0,28,72,.8);
+	}
+	/* .az-carousel-slide img {
+		min-height: 500px;
+	} */
+}

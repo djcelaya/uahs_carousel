@@ -1,0 +1,32 @@
+<?php
+
+function adjust_carousel_settings() {
+    $config_factory = \Drupal::configFactory();
+    $config = $config_factory->getEditable('slick.optionset.center_mode');
+    $config->set('options.settings.randomize', true);
+    $config->set('options.settings.rows', 0);
+    $config->set('options.responsives.responsive.0.settings.autoplay', true);
+    $config->set('options.responsives.responsive.0.settings.pauseOnHover', true);
+    $config->set('options.responsives.responsive.0.settings.autoplaySpeed', 10000);
+    $config->save(TRUE);
+}
+
+// Default settings: https://github.com/az-digital/az_quickstart/blob/main/modules/custom/az_carousel/config/install/slick.optionset.center_mode.yml
+function restore_default_carousel_settings() {
+    $config_factory = \Drupal::configFactory();
+    $config = $config_factory->getEditable('slick.optionset.center_mode');
+    $config->set('options.settings.randomize', false);
+    $config->set('options.settings.rows', 1);
+    $config->set('options.responsives.responsive.0.settings.autoplay', false);
+    $config->set('options.responsives.responsive.0.settings.pauseOnHover', false);
+    $config->set('options.responsives.responsive.0.settings.autoplaySpeed', 3000);
+    $config->save(TRUE);
+}
+
+function uahs_carousel_install() {
+    adjust_carousel_settings();
+}
+
+function uahs_carousel_uninstall() {
+    restore_default_carousel_settings();
+}

@@ -1,0 +1,5 @@
+uahs_carousel:
+  version: 1.x
+  css:
+    theme:
+      css/uahs_carousel.css: {}
