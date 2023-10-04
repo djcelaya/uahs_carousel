@@ -1,0 +1,7 @@
+name: 'UAHS Carousel'
+type: module
+description: 'Overrides of AZ Carousel for UAHS Communications.'
+core_version_requirement: ^10
+package: 'UAHS Communications'
+dependencies:
+  - az_carousel
